@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
                 seedColor: Color.fromRGBO(1, 171, 237, 100)),
           ),
-          home: HomeView()),
+          home: NewsView()),
     );
   }
 }
