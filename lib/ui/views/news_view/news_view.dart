@@ -22,9 +22,12 @@ class _NewsViewState extends State<NewsView> {
         child: ListView.builder(
           itemCount: 12,
           itemBuilder:( (context, index) {
-            return    CustomRowTwo(img: 'rectangle',
-             text: 'نهاية اللقاء بفوز فريقنا على فريق الوثبة بهدفين مقابل هدف ',
-              number: '300', day: '4');
+            return    Padding(
+              padding:  EdgeInsetsDirectional.only(bottom: screenWidth(20)),
+              child: CustomRowTwo(img: 'rectangle',
+               text: 'نهاية اللقاء بفوز فريقنا على فريق الوثبة بهدفين مقابل هدف ',
+                number: '300', day: '4'),
+            );
           }),
         ),
       )

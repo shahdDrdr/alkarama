@@ -13,14 +13,18 @@ class CustomRow extends StatefulWidget {
 class _CustomRowState extends State<CustomRow> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-    children: [
-      Image.asset('assets/images/pngs/${widget.image}.png', height: screenHeight(38)),
-      Text(
-        widget.text,
-        style: TextStyle(color: Colors.white, fontSize: screenWidth(40)),
+    return Container(
+      padding: EdgeInsetsDirectional.only(bottom: screenWidth(70)),
+      child: Row(
+      children: [
+        Image.asset('assets/images/pngs/${widget.image}.png', height: screenHeight(50)),
+        SizedBox(width: screenWidth(30),),
+        Text(
+          widget.text,
+          style: TextStyle(color: Colors.white, fontSize: screenWidth(40)),
+        ),
+      ],
       ),
-    ],
     );
   }
 }

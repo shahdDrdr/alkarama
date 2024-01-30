@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_P2/ui/shared/colors.dart';
-import 'package:task_P2/ui/shared/custom%20_widgets/custom_text.dart';
+import 'package:task_P2/ui/shared/shared_widgets/custom_text.dart';
 import 'package:task_P2/ui/shared/utlis.dart';
 
 class CustomRowTwo  extends StatelessWidget {
@@ -14,13 +14,15 @@ class CustomRowTwo  extends StatelessWidget {
     return 
                 Container(
                  height: screenWidth(3.5),
-                 margin: EdgeInsetsDirectional.only(end: screenWidth(22),bottom: screenWidth(22)),
+                 margin: EdgeInsetsDirectional.only(end: screenWidth(22),),
                   decoration: BoxDecoration(
                     color: AppColors.white,
                     borderRadius: BorderRadius.circular(15)
                   ),
                   child: Row(
-                    children: [Image.asset('assets/images/pngs/${img}.png'),
+                    children: [Image.asset('assets/images/pngs/${img}.png',
+                    width: screenWidth(3),
+                    ),
                     Container(
                       width: screenWidth(2.5),
                       margin: EdgeInsetsDirectional.only(start: screenWidth(25),end: screenWidth(20)),
