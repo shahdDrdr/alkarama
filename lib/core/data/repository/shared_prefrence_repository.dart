@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:task_P2/core/data/models/cart_model.dart';
-import 'package:task_P2/core/data/models/token_info.dart';
 import 'package:task_P2/core/enums/data_type.dart';
 
 class SharedPrefrenceRepository {
@@ -56,23 +54,6 @@ class SharedPrefrenceRepository {
     else
       return true;
   }
-
-  void setTokenInfo(TokenInfo token) {
-    //! Map<String, dynamic> map = token.toJson();
-    //! String strToken = jsonEncode(map);
-    //! jsonEncode (get object return string)
-    setPrefrenc(
-        type: DataType.STRING,
-        key: PREF_TOKEN_INFO,
-        value: jsonEncode(token.toJson()));
-  }
-
-  TokenInfo getTokenInfo() {
-    //! String strToken = getPrefrence(PREF_TOKEN_INFO);
-    //! Map<String, dynamic> map = jsonDecode(strToken);
-    return TokenInfo.fromJson(jsonDecode(getPrefrence(PREF_TOKEN_INFO)));
-  }
-
   void setAppLanguage(String code) {
     setPrefrenc(type: DataType.STRING, key: PREF_APP_LANG, value: code);
   }
@@ -81,24 +62,11 @@ class SharedPrefrenceRepository {
     if (pref.containsKey(PREF_APP_LANG)) {
       return getPrefrence(PREF_APP_LANG);
     } else {
-      return 'en';
+      return 'ar';
     }
   }
 
-  void setCartList(List<CartModel> list) {
-    setPrefrenc(
-        type: DataType.STRING,
-        key: PREF_CART_LIST,
-        value: CartModel.encode(list));
-  }
 
-  List<CartModel> getCartList() {
-    if (pref.containsKey(PREF_CART_LIST))
-    
-      return CartModel.decode(getPrefrence(PREF_CART_LIST));
-    else
-      return [];
-  }
 
   
 

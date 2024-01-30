@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:get/utils.dart';
 import 'package:task_P2/core/data/models/notification_model.dart';
 
-import 'package:task_P2/ui/shared/utlis.dart';
 
 
 enum AppState { TERMINATED, BACKGROUND, FOREGROUND }
