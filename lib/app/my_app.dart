@@ -6,6 +6,7 @@ import 'package:task_P2/core/enums/connectivity_status.dart';
 import 'package:task_P2/ui/shared/utlis.dart';
 import 'package:task_P2/ui/views/Match%20details-team%20extra_view/match_details-team_extra_view.dart';
 import 'package:task_P2/ui/views/home_view/home_view.dart';
+import 'package:task_P2/ui/views/match_details_change/match_details_change.dart';
 import '../core/translation/app_translation.dart';
 
 
