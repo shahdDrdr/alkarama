@@ -38,6 +38,7 @@ class _CustomBorderState extends State<CustomBorder> {
           ):Border()
         ),
         child:
+        
       Center(
         child: CustomText(text: widget.name,
         styleType: TextStyleType.FOCUSTEXT,

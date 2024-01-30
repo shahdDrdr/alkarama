@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_P2/ui/shared/custom%20_widgets/custom_appbar.dart';
 import 'package:task_P2/ui/shared/custom%20_widgets/custom_border.dart';
 import 'package:task_P2/ui/shared/custom%20_widgets/custom_results.dart';
 import 'package:task_P2/ui/shared/shared_widgets/custom_person.dart';
 import 'package:task_P2/ui/shared/utlis.dart';
+import 'package:task_P2/ui/views/match_details_change/match_details_change.dart';
 class MatchDetailsIeamExtraView extends StatefulWidget {
   const MatchDetailsIeamExtraView({super.key});
-
   @override
   State<MatchDetailsIeamExtraView> createState() => _MatchDetailsIeamExtraViewState();
 }
@@ -23,7 +24,7 @@ class _MatchDetailsIeamExtraViewState extends State<MatchDetailsIeamExtraView> {
           Container(
             height: screenWidth(3.5),
             margin: EdgeInsetsDirectional.only(start: screenWidth(22),end: screenWidth(22)),
-            padding: EdgeInsetsDirectional.only(start: screenWidth(20),end: screenWidth(20),top: screenWidth(40),
+            padding: EdgeInsetsDirectional.only(start: screenWidth(14),end: screenWidth(20),top: screenWidth(40),
             
             ),
             color: Color.fromRGBO(233, 230, 230, 1),
@@ -36,7 +37,7 @@ class _MatchDetailsIeamExtraViewState extends State<MatchDetailsIeamExtraView> {
               },
               ),
                CustomBorder(name: 'التبديلات',tap: (){
-                //Get.to(MatchDetails());
+                Get.to(MatchDetailsChange());
              }),
                CustomBorder(name: 'الاحتياط',tap: (){
               },border: true),
