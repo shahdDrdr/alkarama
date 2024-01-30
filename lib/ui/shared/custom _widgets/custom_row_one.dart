@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_P2/ui/shared/custom%20_widgets/custom_text.dart';
+import 'package:task_P2/ui/shared/shared_widgets/custom_text.dart';
 import 'package:task_P2/ui/shared/utlis.dart';
 
 class CustomRowOne extends StatelessWidget {

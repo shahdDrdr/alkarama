@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:task_P2/core/enums/connectivity_status.dart';
 import 'package:task_P2/ui/shared/utlis.dart';
+import 'package:task_P2/ui/views/Match%20details-team%20extra_view/match_details-team_extra_view.dart';
 import 'package:task_P2/ui/views/home_view/home_view.dart';
-import 'package:task_P2/ui/views/news_view/news_view.dart';
 import '../core/translation/app_translation.dart';
 
 
@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
             fontFamily: "Cairo",
             colorScheme: ColorScheme.fromSeed(
                 seedColor: Color.fromRGBO(1, 171, 237, 100)),
-          ),
-          home: NewsView()),
+          ),   
+          home: (MatchDetailsIeamExtraView())),
     );
   }
 }

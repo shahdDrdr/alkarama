@@ -114,17 +114,17 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   CustomRow(
                       text: ' 2023/12/15 الجمعة             ',
-                      image: 'clock'),
+                      image: 'u'),
                   CustomRow(
                     text: ' الساعة الثانية ظهرا                   ',
                     image: 'clock',
                   ),
                   CustomRow(
                       text: ' ملعب الباسل-حمص                  ',
-                      image: 'clock'),
+                      image: 'f'),
                   CustomRow(
                       text: ' بث مباشر على قناة سورية دراما',
-                      image:  'clock'),
+                      image:  'tv'),
                 ],
               ),
             ),
