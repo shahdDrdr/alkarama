@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\alkarama\\alkarama\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "D:\\workspace\\alkarama\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\INFINITY\\.gradle\\caches\\transforms-3\\12d099ea686a1c4551cfcd3b667543a1\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Smart\\.gradle\\caches\\transforms-3\\12d099ea686a1c4551cfcd3b667543a1\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
