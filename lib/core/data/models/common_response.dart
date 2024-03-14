@@ -1,3 +1,4 @@
+
 class CommonResponse<T> {
   int? statusCode;
   late String message;
@@ -6,7 +7,7 @@ class CommonResponse<T> {
   CommonResponse.fromJson(dynamic json) {
     this.statusCode = json['statusCode'];
     if (getStatus) {
-      this.data = json['response'];
+      this.data = json['response']['data'];
     } else {
       if (json['response']['message'].toString().isNotEmpty) {
         message = json['response']['message'];
@@ -40,9 +41,5 @@ class CommonResponse<T> {
       }
     }
   }
-// bool getStatus() {
-  //   return statusCode.toString().startsWith('2');
-  // }
-
   bool get getStatus => statusCode.toString().startsWith('2');
 }

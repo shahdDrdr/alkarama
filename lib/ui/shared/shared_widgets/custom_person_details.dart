@@ -15,15 +15,46 @@ class CustomPersonDetails extends StatelessWidget {
       Image.asset('assets/images/pngs/personicon.png',
       width: screenWidth(10),
       ),
-       Container(
-          margin: EdgeInsetsDirectional.only(start: screenWidth(40),),
-           child:
-           Column(children: [
-        CustomText(text: text,styleType: TextStyleType.BODY,fontSize: screenWidth(42),fontWeight: FontWeight.w800,),
-        CustomText(text: name,styleType: TextStyleType.BODY,fontSize: screenWidth(40),fontWeight: FontWeight.w800,)
-           ],)
-           )
+      Padding(
+        padding: EdgeInsetsDirectional.only(start: 9),
+        child: Center(
+          child: Column(children: [
+             CustomText(text: text,styleType: TextStyleType.BODY,fontSize: screenWidth(42),fontWeight: FontWeight.w800,),
+            CustomText(text: name,styleType: TextStyleType.BODY,fontSize: screenWidth(40),fontWeight: FontWeight.w800,)
+          ],),
+        ),
+      )
+      // Padding(
+      //   padding: EdgeInsetsDirectional.only(start: screenWidth(50)),
+      //   child: CustomText(text: text,styleType: TextStyleType.BODY,fontSize: screenWidth(42),fontWeight: FontWeight.w800,),
+      // ),
+      // Padding(
+      //   padding: EdgeInsetsDirectional.only(start: screenWidth(50),top: screenWidth(30)),
+      //   child: CustomText(text: name,styleType: TextStyleType.BODY,fontSize: screenWidth(40),fontWeight: FontWeight.w800,),
+      // )
+      //  Container(
+      //     margin: EdgeInsetsDirectional.only(start: screenWidth(40),),
+      //      child:
+      //      Column(children: [
+      //   CustomText(text: text,styleType: TextStyleType.BODY,fontSize: screenWidth(42),fontWeight: FontWeight.w800,),
+      //   CustomText(text: name,styleType: TextStyleType.BODY,fontSize: screenWidth(40),fontWeight: FontWeight.w800,)
+           
+           
       ]),
     );
   }
 }
+
+// Stack(children: [
+//       Image.asset('assets/images/pngs/personicon.png',
+//       width: screenWidth(10),
+//       ),
+//        Container(
+//           margin: EdgeInsetsDirectional.only(start: screenWidth(40),),
+//            child:
+//            Column(children: [
+//         CustomText(text: text,styleType: TextStyleType.BODY,fontSize: screenWidth(42),fontWeight: FontWeight.w800,),
+//         CustomText(text: name,styleType: TextStyleType.BODY,fontSize: screenWidth(40),fontWeight: FontWeight.w800,)
+//            ],)
+//            )
+//       ]),

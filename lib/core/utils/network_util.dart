@@ -9,8 +9,7 @@ import 'package:http_parser/http_parser.dart';
 
 
 class NetworkUtil {
-  static String baseUrl = 'fakestoreapi.com';
-// fakestoreapi.com
+  static String baseUrl = 'alkaramaaa.000webhostapp.com';
   static Future<dynamic> sendRequest({
     required RequestType type,
     required String route,
@@ -38,8 +37,6 @@ class NetworkUtil {
             await http.put(url, body: jsonEncode(body), headers: headers);
         break;
     }
-
- 
 
     Map<String, dynamic> jsonResponse = {};
     dynamic result;

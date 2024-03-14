@@ -6,7 +6,8 @@ class CustomResults extends StatelessWidget {
   final String number;
   final String numbertwo;
   final String date;
-  const CustomResults({super.key, required this.number, required this.numbertwo, required this.date});
+  final bool? live;
+  const CustomResults({super.key, required this.number, required this.numbertwo, required this.date, this.live});
   @override
   Widget build(BuildContext context) {
     return Row(children: [
@@ -32,6 +33,10 @@ class CustomResults extends StatelessWidget {
                styleType: TextStyleType.BODY,
                ),
                Spacer(),
+               live==true?
+                Image.asset('assets/images/pngs/live.png',
+               width: screenWidth(12),
+               ):Text(''),
                CustomText(text: date,
                styleType: TextStyleType.NUMBER,
                fontSize: screenWidth(35),
@@ -50,7 +55,7 @@ class CustomResults extends StatelessWidget {
                      Image.asset('assets/images/pngs/alwathba.png',
                      width: screenWidth(8),
                      ),
-                    CustomText(text: 'الكرامة',
+                    CustomText(text: 'الوثبة',
                     styleType: TextStyleType.BODY,
                     fontWeight: FontWeight.w600,
                     )

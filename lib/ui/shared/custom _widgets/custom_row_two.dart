@@ -14,7 +14,7 @@ class CustomRowTwo  extends StatelessWidget {
     return 
                 Container(
                  height: screenWidth(3.5),
-                 margin: EdgeInsetsDirectional.only(end: screenWidth(22),),
+                 margin: EdgeInsetsDirectional.only(end: screenWidth(22),bottom: screenWidth(25),),
                   decoration: BoxDecoration(
                     color: AppColors.white,
                     borderRadius: BorderRadius.circular(15)

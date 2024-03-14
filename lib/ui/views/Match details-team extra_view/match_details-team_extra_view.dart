@@ -30,18 +30,7 @@ class _MatchDetailsIeamExtraViewState extends State<MatchDetailsIeamExtraView> {
             color: Color.fromRGBO(233, 230, 230, 1),
             child: CustomResults(number: '5', numbertwo: '0', date: 'السبت 12/12 12:2م'),
           ),
-          Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-            CustomBorder(name: 'خطة الفريق',tap: (){
-              },
-              ),
-               CustomBorder(name: 'التبديلات',tap: (){
-                Get.to(MatchDetailsChange());
-             }),
-               CustomBorder(name: 'الاحتياط',tap: (){
-              },border: true),
-          ],),
+        CustomBorder(borderthree: true,),
           Container(
             height: screenWidth(1),
             child: ListView(

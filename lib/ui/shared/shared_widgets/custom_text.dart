@@ -31,7 +31,6 @@ class CustomText extends StatelessWidget {
       style: getStyle(),
     );
   }
-
   TextStyle getStyle() {
     TextStyle result = TextStyle();
     switch (styleType) {
@@ -52,12 +51,12 @@ class CustomText extends StatelessWidget {
         break;
       case TextStyleType.NUMBER:
         result = TextStyle(
-            fontSize:fontSize??null, fontWeight: fontWeight, color: mColor);
+            fontSize:fontSize??null, fontWeight: fontWeight, color: mColor,);
         break;
 
       default:
         result = TextStyle(
-            fontSize: screenWidth(28),
+            fontSize: screenWidth(25),
             fontWeight: FontWeight.w400,
             color: mColor);
         break;

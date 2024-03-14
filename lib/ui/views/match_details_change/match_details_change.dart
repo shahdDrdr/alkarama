@@ -28,17 +28,8 @@ class _MatchDetailsChangeState extends State<MatchDetailsChange> {
             color: Color.fromRGBO(233, 230, 230, 1),
             child: CustomResults(number: '5', numbertwo: '0', date: 'السبت 12/12 12:2م'),
           ),
-            Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-            CustomBorder(name: 'خطة الفريق',tap: (){
-              },
-              ),
-               CustomBorder(name: 'التبديلات',tap: (){
-             },border: true,),
-               CustomBorder(name: 'الاحتياط',tap: (){
-              },)     
-      ],),Row(children: [
+     CustomBorder(bordertwo: true,),
+      Row(children: [
         CustomPerson(name: 'انس بلحوس', img: 'anas',row: false),
         Padding(
                     padding:  EdgeInsetsDirectional.only(top: screenWidth(2.6),start: screenWidth(240)),

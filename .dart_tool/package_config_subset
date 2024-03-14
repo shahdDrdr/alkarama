@@ -54,6 +54,10 @@ cupertino_icons
 2.12
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.5/
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.5/lib/
+custom_refresh_indicator
+2.15
+file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/custom_refresh_indicator-3.0.0/
+file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/custom_refresh_indicator-3.0.0/lib/
 dartz
 2.12
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/dartz-0.10.1/
@@ -302,6 +306,10 @@ provider
 2.12
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.1/
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.1/lib/
+pull_to_refresh_flutter3
+3.0
+file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/pull_to_refresh_flutter3-2.0.2/
+file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/pull_to_refresh_flutter3-2.0.2/lib/
 sanitize_html
 2.12
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/sanitize_html-2.1.0/
@@ -334,6 +342,10 @@ shared_preferences_windows
 2.18
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_windows-2.3.0/
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_windows-2.3.0/lib/
+shimmer
+2.17
+file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/shimmer-3.0.0/
+file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/shimmer-3.0.0/lib/
 smooth_page_indicator
 2.12
 file:///C:/Users/INFINITY/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0/
