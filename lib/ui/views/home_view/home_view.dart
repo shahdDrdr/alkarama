@@ -1,14 +1,15 @@
 
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:task_P2/ui/shared/colors.dart';
 import 'package:task_P2/ui/shared/custom%20_widgets/custom_appbar.dart';
-import 'package:task_P2/ui/shared/custom%20_widgets/custom_container_three.dart';
+import 'package:task_P2/ui/shared/custom%20_widgets/custom_underline.dart';
 import 'package:task_P2/ui/shared/custom%20_widgets/custom_row_two.dart';
-import 'package:task_P2/ui/shared/custom%20_widgets/custom_row_one.dart';
 import 'package:task_P2/ui/shared/custom%20_widgets/CustomRow.dart';
+import 'package:task_P2/ui/shared/shared_widgets/custom_text.dart';
 import 'package:task_P2/ui/shared/utlis.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:task_P2/ui/views/home_view/home_view_controller.dart';
@@ -20,15 +21,51 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
  HomeViewController controller=Get.put(HomeViewController());
- int indexx=0;
-
+  RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
   @override
+  
   Widget build(BuildContext context) {
     return SafeArea(child: 
     Scaffold(appBar: CustomAppBar(text: 'نادي الكرامة الرياضي',icon: true,),
-      body: Padding(
-        padding:  EdgeInsetsDirectional.only(start: screenWidth(22),end: screenWidth(22),top: screenWidth(20)),
-        child: ListView(
+      body: 
+      SmartRefresher(
+         enablePullDown: true,
+        enablePullUp: true,
+        header: WaterDropHeader(),
+        onRefresh:(){
+          controller.onInit();
+          _refreshController.refreshCompleted();
+        } ,
+       controller:_refreshController ,
+        child: Padding(
+          padding:  EdgeInsetsDirectional.only(start: screenWidth(22),end: screenWidth(22),top: screenWidth(20)),
+          child:Obx(() {
+            return  controller.isLoading.value?
+          Shimmer.fromColors(
+            period: Duration(seconds: 5),
+            child: Home()   , baseColor: AppColors.grey, highlightColor: AppColors.lightGray)
+            :
+            Home();
+          })
+          ),
+      )));
+  }
+}
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  HomeViewController controller=Get.put(HomeViewController());
+  @override
+  Widget build(BuildContext context) {
+    return   Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Obx(() {
               print(controller.activeindex.value);
@@ -36,7 +73,6 @@ class _HomeViewState extends State<HomeView> {
   options: CarouselOptions(
     onPageChanged: (index,reason){  print(index);
     controller.activeindex.value=index;
-   
     },
     height:   screenHeight(3.3),
    // animateToClosest: false,
@@ -45,65 +81,65 @@ class _HomeViewState extends State<HomeView> {
   itemCount: 4,
   itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
    Container(
-        padding: EdgeInsetsDirectional.only(start: screenWidth(13)),
-        margin: EdgeInsetsDirectional.only(
-          top: screenHeight(15),
-        ),
-        height: screenHeight(4.3),
-        decoration: BoxDecoration(
+            padding: EdgeInsetsDirectional.only(start: screenWidth(13)),
+            margin: EdgeInsetsDirectional.only(
+              top: screenHeight(15),
+            ),
+            height: screenHeight(4.3),
+            decoration: BoxDecoration(
             color: Color.fromRGBO(30, 68, 141, 1),
             borderRadius: BorderRadius.circular(20)),
-        child: Row(
-          children: [
+            child: Row(
+              children: [
             Image.asset('assets/images/pngs/person.png'),
             Container(
               margin: EdgeInsetsDirectional.only(start: screenWidth(33)),
               width: screenWidth(2.18),
               child: Column(
                 children: [
-                  Text(
-                    'المباراة القادمة',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: screenWidth(25),
-                        height: 1.6),
+                  Padding(
+                    padding:  EdgeInsetsDirectional.only(end: screenWidth(25)),
+                    child: CustomText(text: 'المباراة القادمة',
+                    styleType: TextStyleType.BODY,
+                    fontWeight: FontWeight.w600,
+                    mColor: AppColors.white,
+                    ),
                   ),
                   Row(
                     children: [
                       Column(
                         children: [
-                          Image.asset('assets/images/pngs/alwathba.png',
-                           width: screenWidth(12),
+                          Padding(
+                            padding:  EdgeInsetsDirectional.only(top: screenWidth(37)),
+                            child: Image.asset('assets/images/pngs/alwathba.png',
+                             width: screenWidth(11),
+                            ),
                           ),
-                          Text(
-                            'ALWATHBA',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: screenWidth(38)),
-                          ),
+                         CustomText(text: 'ALWATHBA',
+                         styleType: TextStyleType.BODY,
+                         mColor: AppColors.white,
+                         fontSize: screenWidth(38),
+                         )
                         ],
                       ),
-                      Text(
-                        '       vs       ',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: screenWidth(26),
-                            fontWeight: FontWeight.bold),
-                      ),
+                        CustomText(text: '      vs       ',
+                         styleType: TextStyleType.BODY,
+                         mColor: AppColors.white,
+                         fontSize: screenWidth(23),
+                         fontWeight: FontWeight.w800,
+                         ),
                       Padding(
                         padding: EdgeInsetsDirectional.only(top: screenWidth(38)),
                         child: Column(
                           children: [
                             Image.asset('assets/images/pngs/of.png',
                             width: screenWidth(11),
-                                              
                             ),
-                            Text(
-                              'ALKARAMA',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: screenWidth(38)),
-                            ),
+                              CustomText(text: 'ALKARAMA',
+                         styleType: TextStyleType.BODY,
+                         mColor: AppColors.white,
+                         fontSize: screenWidth(38),
+                         )
                           ],
                         ),
                       ),
@@ -128,8 +164,8 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
             ),
-          ],
-        ),
+              ],
+            ),
             ),
                       );
             }),
@@ -145,47 +181,28 @@ class _HomeViewState extends State<HomeView> {
                         ),
                      );
                   }),
-           Padding(
-             padding:  EdgeInsetsDirectional.only(top: screenWidth(8)),
-             child: CustomRowOne(name: 'اخر الاخبار',),
-           ),
-              Row(children: [
-                     CustomContainerThree(size: screenWidth(6)),
-                        CustomContainerThree(size: screenWidth(15),color: AppColors.orange,
-                        margin: true
-                        ,),
-                      CustomContainerThree(size: screenWidth(10))
-
-                     ],),
-           Container(
-            width: screenWidth(1),
-            height: screenWidth(3.6),
-            margin: EdgeInsetsDirectional.only(top: screenWidth(10),bottom: screenWidth(10)),
+             CustomUnderline(text: 'أخر الأخبار', ),
+            
+               Expanded(
              child: ListView(
-             // shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
+              padding: EdgeInsetsDirectional.only(top: screenWidth(20)),
               children: [
+                 CustomRowTwo(img: 'rectangle', 
+              text:  'نهاية اللقاء يفوز فريقنا على فريق الوثبة بهدفين مقابل هدف', 
+            number: '300', day:'4' ),
+               CustomRowTwo(img: 'rectangle', 
+              text:  'نهاية اللقاء يفوز فريقنا على فريق الوثبة بهدفين مقابل هدف', 
+              number: '300', day:'4' ),
                  CustomRowTwo(img: 'rectangle', 
               text:  'نهاية اللقاء يفوز فريقنا على فريق الوثبة بهدفين مقابل هدف', 
               number: '300', day:'4' ),
-               Container(
-            width: screenWidth(1),
-            height: screenWidth(3.6),
-             child: ListView(
-             // shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: [
                  CustomRowTwo(img: 'rectangle', 
               text:  'نهاية اللقاء يفوز فريقنا على فريق الوثبة بهدفين مقابل هدف', 
-              number: '300', day:'4' )
+              number: '300', day:'4' ),
               ],
              ),
-           )
-              ],
-             ),
-           ),
-       ]
-    )
-    )));
+               ),
+          ],
+        );
   }
 }

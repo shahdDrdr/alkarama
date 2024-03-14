@@ -36,7 +36,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       color: AppColors.white,
       ),
       Image.asset('assets/images/pngs/ball.png')
-      ],): Row()
+      ],): Row(
+      )
     
     ],
    )
